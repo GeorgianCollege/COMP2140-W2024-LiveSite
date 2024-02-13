@@ -8,6 +8,8 @@ const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const morgan_1 = __importDefault(require("morgan"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const hbs_1 = __importDefault(require("hbs"));
 const Routes_1 = __importDefault(require("../Routes"));
 const app = (0, express_1.default)();
