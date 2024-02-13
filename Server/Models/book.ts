@@ -4,7 +4,7 @@ const bookSchema = new mongoose.Schema({
     title: {type : String, required: true},
     releaseDate: {type: Date},
     genres: [String],
-    authors: {type: mongoose.Schema.Types.ObjectId, refPath: 'type'},
+    authors: [String],
     description: String,
     country: String,
     languages: [String],

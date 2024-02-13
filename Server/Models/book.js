@@ -8,7 +8,7 @@ const bookSchema = new mongoose_1.default.Schema({
     title: { type: String, required: true },
     releaseDate: { type: Date },
     genres: [String],
-    authors: { type: mongoose_1.default.Schema.Types.ObjectId, refPath: 'type' },
+    authors: [String],
     description: String,
     country: String,
     languages: [String],
