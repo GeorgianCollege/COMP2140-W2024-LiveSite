@@ -23,7 +23,8 @@ mongoose.connection.on('connected', () => {
 
 
 // Routing modules
-import indexRouter from '../Routes';
+import indexRouter from '../Routes/index';
+import mediaRouter from '../Routes/media';
 
 const app = express();
 
@@ -51,6 +52,7 @@ app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 app.use('/', indexRouter);
+app.use('/media', mediaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 
