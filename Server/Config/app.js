@@ -11,6 +11,12 @@ const morgan_1 = __importDefault(require("morgan"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const hbs_1 = __importDefault(require("hbs"));
+const mongoose_1 = __importDefault(require("mongoose"));
+const db_1 = __importDefault(require("./db"));
+mongoose_1.default.connect(db_1.default.DB_URI);
+mongoose_1.default.connection.on('connected', () => {
+    console.log('Connected to MongoDB');
+});
 const Routes_1 = __importDefault(require("../Routes"));
 const app = (0, express_1.default)();
 app.set('views', path_1.default.join(__dirname, '../Views'));

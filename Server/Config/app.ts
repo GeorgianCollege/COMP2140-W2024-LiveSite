@@ -9,6 +9,19 @@ dotenv.config();
 
 import hbs from 'hbs';
 
+// import mongoose
+import mongoose from 'mongoose';
+
+// connect to the database
+import DB from './db';
+
+mongoose.connect(DB.DB_URI);
+
+mongoose.connection.on('connected', () => {
+  console.log('Connected to MongoDB');
+});
+
+
 // Routing modules
 import indexRouter from '../Routes';
 
