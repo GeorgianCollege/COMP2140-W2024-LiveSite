@@ -25,7 +25,7 @@ export function DisplayBookList(req: Request, res: Response, next: NextFunction)
             return console.error(err);
         }
 
-        res.render('index', {title: 'Book List', page: 'book-list', book: bookCollection});
+        res.render('index', {title: 'Book List', page: 'book-list', books: bookCollection});
     });
 
 }

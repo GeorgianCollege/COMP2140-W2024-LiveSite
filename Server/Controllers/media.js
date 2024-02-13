@@ -10,7 +10,7 @@ function DisplayBookList(req, res, next) {
         if (err) {
             return console.error(err);
         }
-        res.render('index', { title: 'Book List', page: 'book-list', book: bookCollection });
+        res.render('index', { title: 'Book List', page: 'book-list', books: bookCollection });
     });
 }
 exports.DisplayBookList = DisplayBookList;
