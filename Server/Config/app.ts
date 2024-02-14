@@ -69,7 +69,7 @@ app.use(function(err: HttpError, req: Request, res: Response, next: NextFunction
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', {title: `Error: ${err.status}`, page: 'error'});
+  res.render('index', {title: `Error: ${err.status}`, page: 'error', message: err.message});
 });
 
 export default app;

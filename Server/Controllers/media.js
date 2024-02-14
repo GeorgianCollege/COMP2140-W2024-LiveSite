@@ -6,11 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DisplayBookList = void 0;
 const book_1 = __importDefault(require("../Models/book"));
 function DisplayBookList(req, res, next) {
-    book_1.default.find(function (err, bookCollection) {
-        if (err) {
-            return console.error(err);
-        }
-        res.render('index', { title: 'Book List', page: 'book-list', books: bookCollection });
+    book_1.default.find()
+        .then((bookCollection) => {
+        res.render('index', { title: 'Book List', page: 'bookList', books: bookCollection });
+    })
+        .catch((err) => {
+        console.error(err);
     });
 }
 exports.DisplayBookList = DisplayBookList;

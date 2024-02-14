@@ -17,15 +17,15 @@ interface BookType
 
 export function DisplayBookList(req: Request, res: Response, next: NextFunction): void
 {
+    
 
-    Book.find(function(err: Error, bookCollection: BookType[])
-    {
-        if(err)
-        {
-            return console.error(err);
-        }
-
-        res.render('index', {title: 'Book List', page: 'book-list', books: bookCollection});
+    Book.find()
+    .then((bookCollection) => {
+        res.render('index', {title: 'Book List', page: 'bookList', books: bookCollection});
+    })
+    .catch((err) => {
+        console.error(err);
     });
+
 
 }
